@@ -1,0 +1,239 @@
+$card-light-red: hsl(0, 100%, 67%);
+$card-light-red-bg: hsla(0, 100%, 67%, 0.1);
+$card-orangey-yellow: hsl(39, 100%, 56%);
+$card-orangey-yellow-bg: hsla(39, 100%, 56%, 0.1);
+$card-green-teal: hsl(166, 100%, 37%);
+$card-green-teal-bg: hsla(166, 100%, 37%, 0.1);
+$card-cobalt-blue: hsl(234, 85%, 45%);
+$card-cobalt-blue-bg: hsla(234, 85%, 45%, 0.1);
+
+$background-light-slate-blue: hsl(252, 100%, 67%);
+$background-light-royal-blue: hsl(241, 81%, 54%);
+
+$circle-violet-blue: hsla(256, 72%, 46%, 1);
+$circle-persian-blue: hsla(241, 72%, 46%, 0);
+
+$white: hsl(0, 0%, 100%);
+$pale-blue: hsl(221, 100%, 96%);
+$light-lavender: hsl(241, 100%, 89%);
+$very-dark-blue: hsl(224, 30%, 27%);
+
+$min-width: 900px;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 112.5%;
+}
+
+body {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @media screen and (min-width: $min-width){
+    height: 100vh;
+  }
+
+  main{
+    width: 375px;
+    height: 100%;
+    box-shadow: 0px 0px 30px -10px $light-lavender;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: $min-width) {
+      flex-direction: row;
+      width: 730px;
+      max-width: 730px;
+      border-radius: 30px;
+      box-shadow: 0px 10px 19px -3px $light-lavender;
+      max-height: 510px;
+    }
+
+    .top-container{
+      background: linear-gradient($background-light-slate-blue, $background-light-royal-blue);
+      color: $white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 1rem;
+      border-radius: 0px 0px 30px 30px;
+      padding: 40px;
+      text-align: center;  
+
+      @media screen and (min-width: $min-width) {
+        width: 50%;
+        row-gap: 1.75rem;
+        border-radius: 30px;
+      }
+
+      h1 {
+        font-size: 1rem;
+        color: $light-lavender;
+            
+        @media screen and (min-width: $min-width) {
+          font-size: 1.25rem;
+        }
+      }
+
+      .score{
+        background: linear-gradient($circle-violet-blue, $circle-persian-blue);  
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        font-size: 3rem;
+        padding-top: 1.5rem;
+            
+        @media screen and (min-width: $min-width) {
+          width: 11rem;
+          height: 11rem;
+          font-size: 3.75rem;
+          padding-top: 2rem;
+        }
+
+        span {
+          display: block;
+          font-size: 1rem;
+          color: $light-lavender;
+        }
+      }
+
+      h3{
+        @media screen and (min-width: $min-width){
+          font-size: 1.75rem;
+        }
+      }
+
+      p {
+        color: $light-lavender;
+        font-size: 0.9rem;
+
+        @media screen and (min-width: $min-width){
+          padding: 0 40px;
+        }
+      }
+    }
+
+    .bottom-container {
+      color: $very-dark-blue;
+      padding: 1.5rem;
+      background-color: $white;
+          
+      @media screen and (min-width: $min-width) {
+        width: 50%;
+        border-radius: 0px 30px 30px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 1.5rem;
+        padding: 40px;
+      }
+
+      .cards{
+        .card{
+          margin: 15px auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0.75rem;
+          font-size: 0.75rem;
+          border-radius: 10px;
+
+          .card-score {
+            font-weight: 700;
+            font-size: 0.85rem;
+            span{
+              color: hsla(224, 30%, 27%, 0.6);
+            }         
+          }
+        }
+
+        .red{
+          background: $card-light-red-bg;
+          h3{
+            color: $card-light-red;
+            display: flex;
+            align-items: center;
+            &::before{
+              content: url('../assets/images/icon-reaction.svg');
+              margin-right: 10px;
+            }
+          }
+        }
+
+        .yellow{
+          background: $card-orangey-yellow-bg;
+          h3{
+            color: $card-orangey-yellow;
+            display: flex;
+            align-items: center;
+            &::before{
+              content: url('../assets/images/icon-memory.svg');
+              margin-right: 10px;
+            }
+          }
+        }
+
+        .green{
+          background: $card-green-teal-bg;
+          h3{
+            color: $card-green-teal;
+            display: flex;
+            align-items: center;
+            &::before{
+              content: url('../assets/images/icon-verbal.svg');
+              margin-right: 10px;
+            }
+          }
+        }
+
+        .blue{
+          background: $card-cobalt-blue-bg;
+          h3{
+            color: $card-cobalt-blue;
+            display: flex;
+            align-items: center;
+            &::before{
+              content: url('../assets/images/icon-visual.svg');
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+
+      button {
+        width: 100%;
+        font-family: 'Hanken Grotesk', sans-serif;
+        color: $white;
+        background-color: $very-dark-blue;
+        padding: 15px 0;
+        font-size: 1rem;
+        border: none;
+        border-radius: 30px;
+        margin-top: 15px;
+
+        &:hover{
+          cursor: pointer;
+          background: linear-gradient($background-light-slate-blue, $background-light-royal-blue);;
+        }
+      }
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center; 
+  margin: 15px auto;  
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
